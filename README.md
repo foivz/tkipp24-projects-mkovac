@@ -1,5 +1,3 @@
-**(ERASMUS students please see the english version (README_ENG.md) of this document)**
-
 # Inicijalne upute za prijavu 1. projekta iz kolegija Testiranje i kvaliteta programskih proizvoda
 
 Poštovane kolegice i kolege, 
@@ -13,21 +11,40 @@ Sav programski kod i testove je potrebno verzionirati u glavnoj **master** grani
 
 Povratnu informaciju na samu prijavu tima i projekta, kao i na završnu predaju ćete od nastavnika dobiti kroz sekciju Discussions (također dostupnu na GitHubu vašeg projekta). A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
 
-# Naziv projekta
-(u redak iznad navedite kratki proizvoljni naziv projekta prikladan akademskoj zajednici, a ovaj tekst obrišite)
+# Preschool Management Software
 
 ## Model rada na projektu
-(Ovdje navedite model rada na projektu, pri čemu su dostupne opcije: (1) Nastavak rada na projektu iz kolegija "Naziv kolegija", (2) Rad na projektu u suradnji s nastavnicima, (3) Rad na projektu u suradnji s industrijom.
+(1) Nastavak rada na projektu iz kolegija "RPP"
 
 ## Opis projekta
-(Ovdje ukratko opišite projekt na kojem radite, uključujući temu i domenu projekta, kolegij na kojem ste inicijalno započeli projekt, te inicijalne tehnologije koje ste koristili za prethodnu izradu projekta.)
+(Ovdje ukratko opišite projekt na kojem radite)
+Domena razvoja softvera za praćenje rada dječjeg vrtića obuhvaća sve ključne aspekte organizacije i upravljanja dječjim vrtićem. Cilj ovog softvera je olakšati praćenje prisutnosti djece, izradu rasporeda aktivnosti, administraciju, evidenciju zaposlenika i komunikaciju s roditeljima. Administratorski aspekt softvera uključuje praćenje i evidentiranje podataka o djeci, upis novih polaznika te praćenje i evidentiranje zaposlenika. Projekt je inicijalno započet i razvijen na predmetu _Razvoj programskih proizvoda_.
+
+Tehnologije koje su se primarno koristile za razvoj projekta su:
+* [**Programski jezik C#**](https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/?view=vs-2022): Korišten za razvoj glavnog softverskog rješenja.
+
+* [**Windows Forms .NET**](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-7.0): Korišten za razvoj grafičkog korisničkog sučelja, pružajući bogat, stabilan i interaktivan dizajn.
+
+* [**Visual Studio**](https://visualstudio.microsoft.com/): Kao integrirano razvojno okruženje za programiranje u C# i Windows Forms .NET.
+
+* [**SQLite, MySQL**](https://sqlitebrowser.org/): Za pohranu podataka o djeci, osoblju, rasporedu, aktivnostima i administrativnim informacijama.
+
+* [**ADO.NET**](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview): Za integraciju i upravljanje online bazom podataka, omogućujući siguran pristup i manipulaciju podacima.
+
+* [**Entity Framework**](https://learn.microsoft.com/en-us/ef/): Za olakšavanje upita i pristupa podacima u aplikaciji.
+
+* [**SMTP server**](https://support.google.com/a/answer/176600?hl=en): Za slanje e-mail obavijesti roditeljima.
+
+* [**Operativni sustav Windows**](https://www.microsoft.com/en-us/windows?r=1): Kako bi aplikacija bila kompatibilna s okruženjem većine korisnika.
+
+* [**Projektni alati (Gantt Chart)**](https://www.onlinegantt.com/#/gantt): Za upravljanje projektom, planiranje aktivnosti, i praćenje napretka.
+
+* [**Version Control Platform (GitHub)**](https://github.com/): Za upravljanje izvorima koda, verzioniranje i timsku suradnju.
 
 ## Projektni tim
-
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
-Ime i prezime | ... | ... | ...
+Marta Kovač | mkovac21@student.foi.hr | 0016154537 | mkovac21
 
 ## Specifikacija projekta
 Ovdje navedite funkcionalne i nefunkcionalne zahtjeve koje je vaš projekt do sada obuhvaćao:
