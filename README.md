@@ -1,24 +1,17 @@
-# Inicijalne upute za prijavu 1. projekta iz kolegija Testiranje i kvaliteta programskih proizvoda
-
-Poštovane kolegice i kolege, 
-
-čestitamo vam jer ste uspješno prijavili svoj projektni tim na kolegiju Testiranje i kvaliteta programskih proizvoda, te je za vas automatski kreiran repozitorij koji ćete koristiti za verzioniranje vašega koda, testova, ali i za pisanje dokumentacije.
-
-Ovaj dokument (README.md) predstavlja **osobnu iskaznicu vašeg projekta**. Vaš prvi zadatak je **prijaviti vlastiti projektni prijedlog** na način da ćete prijavu vašeg projekta, sukladno uputama danim u ovom tekstu, napisati upravo u ovaj dokument, umjesto ovoga teksta.
-
-Za upute o sintaksi koju možete koristiti u ovom dokumentu i kod pisanje vaše projektne dokumentacije pogledajte [ovaj link](https://guides.github.com/features/mastering-markdown/).
-Sav programski kod i testove je potrebno verzionirati u glavnoj **master** grani i **obvezno** smjestiti u mapu Software. Sve artefakte (npr. slike) koje ćete koristiti u vašoj dokumentaciju obvezno verzionirati u posebnoj grani koja je već kreirana i koja se naziva **master-docs** i smjestiti u mapu Documentation.
-
-Povratnu informaciju na samu prijavu tima i projekta, kao i na završnu predaju ćete od nastavnika dobiti kroz sekciju Discussions (također dostupnu na GitHubu vašeg projekta). A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
-
 # Preschool Management Software
 
 ## Model rada na projektu
 (1) Nastavak rada na projektu iz kolegija "RPP"
 
 ## Opis projekta
-(Ovdje ukratko opišite projekt na kojem radite)
-Domena razvoja softvera za praćenje rada dječjeg vrtića obuhvaća sve ključne aspekte organizacije i upravljanja dječjim vrtićem. Cilj ovog softvera je olakšati praćenje prisutnosti djece, izradu rasporeda aktivnosti, administraciju, evidenciju zaposlenika i komunikaciju s roditeljima. Administratorski aspekt softvera uključuje praćenje i evidentiranje podataka o djeci, upis novih polaznika te praćenje i evidentiranje zaposlenika. Projekt je inicijalno započet i razvijen na predmetu _Razvoj programskih proizvoda_.
+Domena razvoja softvera _Preschool Management Software_ obuhvaća sve ključne aspekte organizacije i upravljanja dječjim vrtićem, a neki od primjera istih su:
+* vođenje evidencije djece
+* organiziranje i praćenje aktivnosti
+* vođenje evidencije o korištenim i potrošenim resursima i materijalima
+
+Shodno tome, cilj ovog softvera je olakšati praćenje prisutnosti djece, izradu rasporeda aktivnosti, administraciju, evidenciju zaposlenika i komunikaciju s roditeljima. Administratorski aspekt softvera uključuje praćenje i evidentiranje podataka o djeci, upis novih polaznika te praćenje i evidentiranje zaposlenika. Nadalje, softver omogućuje dvosmjernu komunikaciju između vrtića i roditelja putem e-pošte, dijeleći informacije o djetetovom napretku, događanjima i posebnim zahtjevima. Kroz siguran pristup podacima i definiranje različitih korisničkih uloga, osigurava se povjerljivost i integritet informacija. Uz to, integracijom s online bazom podataka putem ADO.NET-a i .NET Framework-a omogućava se pouzdana pohrana i upravljanje podacima, čime se olakšava svakodnevno upravljanje i očuvanje povijesti o dječjem vrtiću. 
+
+Projekt je inicijalno započet i razvijen na predmetu _Razvoj programskih proizvoda_.
 
 Tehnologije koje su se primarno koristile za razvoj projekta su:
 * [**Programski jezik C#**](https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/?view=vs-2022): Korišten za razvoj glavnog softverskog rješenja.
