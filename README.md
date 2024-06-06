@@ -58,4 +58,9 @@ F11 | Upravljanje opremom i resursima | Ova funkcionalnost omogućuje administra
 F12 | Grafički prikaz statističkih podataka | Ova funkcionalnost omogućuje sustavu da generira i prikaže grafičke prikaze statističkih podataka povezanih s radom dječjeg vrtića. Grafički prikazi, kao što su grafikoni, dijagrame i tablice, koriste se kako bi se informacije prezentirale na vizualno privlačan način. Sustav će omogućiti korisnicima, posebice administratorima, da lako interpretiraju složene statističke podatke, identificiraju trendove, analiziraju ključne pokazatelje i donose informirane odluke. <br> Grafički prikazi mogu obuhvaćati različite aspekte rada vrtića, kao što su prisutnost djece, financijski pokazatelji, stanje resursa ili učinkovitost osoblja. <br> Ova funkcionalnost pridonosi boljem razumijevanju i praćenju ključnih informacija, olakšava donošenje odluka i pruža vizualno privlačan način prezentacije podataka. Grafički prikazi statističkih podataka čine upravljanje dječjim vrtićem učinkovitijim i transparentnijim, potičući kontinuirano unapređenje rada. | Marta Kovač
 
 ## Tehnologije i oprema
-Ovdje opišite tehnologije i alate koje koje ćete koristit u realizaciji projekta na kolegiju Testiranje i kvaliteta programskih proizvoda. Naravno, ovu sekciju možete naknadno i ažurirati. 
+* [**BDD (engl. Behavior-driven development) okvir/alat koji podržava Gherkin jezik**]: Korišten za testiranje prihvatljivosti.
+* [**Code Metrics**]: Korišten za izračun metrika programskog koda.
+* [**SonarLint**]: Korišten za automatiziranu recenziju programskog koda.
+* [**Fine Code Coverage**]: Korišten za prikaz pokrivenosti jediničnog testiranja.
+* 
+
