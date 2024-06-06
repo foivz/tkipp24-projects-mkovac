@@ -40,8 +40,6 @@ Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 Marta Kovač | mkovac21@student.foi.hr | 0016154537 | mkovac21
 
 ## Specifikacija projekta
-Ovdje navedite funkcionalne i nefunkcionalne zahtjeve koje je vaš projekt do sada obuhvaćao:
-
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Prijavljivanje i registriranje zaposlenika u sustav | Prijavljivanje i registriranje u sustavu dječjeg vrtića ključne su funkcionalnosti koje osiguravaju siguran pristup softverskom rješenju za praćenje rada vrtića. Ova funkcionalnost omogućuje korisnicima, uključujući administratore i zaposlenike, da unesu svoje pristupne podatke dodijeljene prilikom zapošljavanja. <br> Administratori imaju poseban proces prve prijave u sustav kako bi osigurali sigurnost i jednostavnost stvaranja vlastitog korisničkog računa. Prilikom prve prijave, koriste privremene pristupne podatke: korisničko ime "admin" i lozinku "1234". Ovi podaci su privremeni, hardkodirani i koriste se isključivo za inicijalnu prijavu kako bi omogućili stvaranje vlastitog korisničkog računa. Nakon toga, administratori mogu promijeniti svoje pristupne podatke putem funkcionalnosti "Administriranje zaposlenika". <br> Uobičajeni pristupni podaci uključuju korisničko ime i lozinku, a sustav osigurava temeljitu verifikaciju kako bi zaštitio sigurnost i spriječio neovlaštene pristupe. Nakon uspješne prijave, korisnici dobivaju pristup svojim osobnim podacima i funkcionalnostima prilagođenima njihovoj ulozi u vrtiću. Ova sveobuhvatna funkcionalnost omogućuje povjerljivost podataka i pruža personalizirano iskustvo, čime se osigurava siguran i intuitivan pristup softveru za praćenje rada dječjeg vrtića. | Karla Kulier
@@ -62,5 +60,5 @@ F12 | Grafički prikaz statističkih podataka | Ova funkcionalnost omogućuje su
 * [**Code Metrics**]: Korišten za izračun metrika programskog koda.
 * [**SonarLint**]: Korišten za automatiziranu recenziju programskog koda.
 * [**Fine Code Coverage**]: Korišten za prikaz pokrivenosti jediničnog testiranja.
-* 
+* [**Github Copilot**]: Korišten kao pomoć prilikom implementiranja nove funkcionalnosti.
 
