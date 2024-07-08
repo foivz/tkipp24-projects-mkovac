@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\PresentationLayer\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\PresentationLayer\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D72E3299-D5C4-4060-9565-31BB61C4B1AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccessLayer</RootNamespace>
+    <AssemblyName>DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommunityToolkit.Mvvm, Version=8.2.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\CommunityToolkit.Mvvm.8.2.2\lib\netstandard2.0\CommunityToolkit.Mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\HarfBuzzSharp.7.3.0\lib\net462\HarfBuzzSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveChartsCore, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc92a3e13d40c573, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\LiveChartsCore.2.0.0-rc2\lib\netstandard2.0\LiveChartsCore.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveChartsCore.SkiaSharpView, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc92a3e13d40c573, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\LiveChartsCore.SkiaSharpView.2.0.0-rc2\lib\netstandard2.0\LiveChartsCore.SkiaSharpView.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveChartsCore.SkiaSharpView.WPF, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc92a3e13d40c573, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\LiveChartsCore.SkiaSharpView.WPF.2.0.0-rc2\lib\net462\LiveChartsCore.SkiaSharpView.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\SkiaSharp.2.88.6\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.HarfBuzz, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\SkiaSharp.HarfBuzz.2.88.6\lib\net462\SkiaSharp.HarfBuzz.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Desktop.Common, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\SkiaSharp.Views.Desktop.Common.2.88.6\lib\net462\SkiaSharp.Views.Desktop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.WPF, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\SkiaSharp.Views.WPF.2.88.6\lib\net462\SkiaSharp.Views.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\System.Drawing.Common.4.7.3\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\PresentationLayer\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityRepository.cs" />
+    <Compile Include="DayRepository.cs" />
+    <Compile Include="EquipmentRepository.cs" />
+    <Compile Include="ParentRepository.cs" />
+    <Compile Include="AttendanceRepository.cs" />
+    <Compile Include="ChildRepository.cs" />
+    <Compile Include="GroupRepository.cs" />
+    <Compile Include="NoteRepository.cs" />
+    <Compile Include="PMSModel.cs" />
+    <Compile Include="PreschoolYearRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceRepository.cs" />
+    <Compile Include="RoleRepository.cs" />
+    <Compile Include="UserRepository.cs" />
+    <Compile Include="WeeklyScheduleRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{a5c551aa-b1ac-4fec-a283-aa2da18ee92b}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModelsLayer\ModelsLayer.csproj">
+      <Project>{406c3b19-9bf3-4490-acb9-3dc9dbbb79da}</Project>
+      <Name>ModelsLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\PresentationLayer\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\PresentationLayer\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\PresentationLayer\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\PresentationLayer\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\PresentationLayer\packages\CommunityToolkit.Mvvm.8.2.2\build\netstandard2.0\CommunityToolkit.Mvvm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\PresentationLayer\packages\CommunityToolkit.Mvvm.8.2.2\build\netstandard2.0\CommunityToolkit.Mvvm.targets'))" />
+    <Error Condition="!Exists('..\PresentationLayer\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\PresentationLayer\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\PresentationLayer\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\PresentationLayer\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets'))" />
+    <Error Condition="!Exists('..\PresentationLayer\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\PresentationLayer\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\PresentationLayer\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\PresentationLayer\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
+  </Target>
+  <Import Project="..\PresentationLayer\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\PresentationLayer\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\PresentationLayer\packages\CommunityToolkit.Mvvm.8.2.2\build\netstandard2.0\CommunityToolkit.Mvvm.targets" Condition="Exists('..\PresentationLayer\packages\CommunityToolkit.Mvvm.8.2.2\build\netstandard2.0\CommunityToolkit.Mvvm.targets')" />
+  <Import Project="..\PresentationLayer\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets" Condition="Exists('..\PresentationLayer\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\PresentationLayer\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets" Condition="Exists('..\PresentationLayer\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" />
+  <Import Project="..\PresentationLayer\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\PresentationLayer\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\PresentationLayer\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\PresentationLayer\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
+</Project>
