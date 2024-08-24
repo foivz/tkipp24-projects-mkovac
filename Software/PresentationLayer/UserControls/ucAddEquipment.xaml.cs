@@ -21,6 +21,11 @@ namespace PresentationLayer.UserControls
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            if(txtName.Text == "" || txtAmount.Text == "")
+            {
+                MessageBox.Show("Sva polja osim polja Description moraju imati unesenu vrijednost");
+                return;
+            }
             try
             {
                 var equipment = new Equipment
