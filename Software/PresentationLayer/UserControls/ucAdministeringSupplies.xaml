@@ -12,7 +12,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Supplies" FontSize="24" FontWeight="Bold" Foreground="#333" 
+        <Label Content="Administering Supplies" FontSize="24" FontWeight="Bold" Foreground="#333" 
                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20"/>
 
         <TabControl x:Name="tabControl" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
