@@ -1,11 +1,12 @@
-﻿using EntityLayer;
+﻿using DataAccessLayer.Interfaces;
+using EntityLayer;
 using System;
 using System.Data.Entity;
 using System.Linq;
 
 namespace DataAccessLayer
 {
-    public class EquipmentRepository : IDisposable
+    public class EquipmentRepository : IDisposable, IEquipmentRepository
     {
         private PMSModel Context { get; set; }
 

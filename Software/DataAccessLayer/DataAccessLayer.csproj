@@ -115,6 +115,7 @@
     <Compile Include="ActivityRepository.cs" />
     <Compile Include="DayRepository.cs" />
     <Compile Include="EquipmentRepository.cs" />
+    <Compile Include="Interfaces\IEquipmentRepository.cs" />
     <Compile Include="ParentRepository.cs" />
     <Compile Include="AttendanceRepository.cs" />
     <Compile Include="ChildRepository.cs" />
