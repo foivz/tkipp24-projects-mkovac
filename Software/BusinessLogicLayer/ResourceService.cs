@@ -1,48 +1,42 @@
 ﻿using DataAccessLayer;
+using DataAccessLayer.Interfaces;
 using EntityLayer;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BusinessLogicLayer
 {
     public class ResourceService
     {
+        private readonly IResourceRepository resourceRepository;
+        public ResourceService(IEquipmentRepository equipmentRepository = null)
+        {
+            this.resourceRepository = resourceRepository ?? new ResourceRepository(new PMSModel());
+        }
+
         /// <remarks>Marta Kovač</remarks>
         public List<Resource> GetAllResources()
         {
-            using (var repo = new ResourceRepository(new PMSModel()))
-            {
-                return repo.GetAllResources().ToList();
-            }
+            return resourceRepository.GetAllResources().ToList();
         }
 
         /// <remarks>Marta Kovač</remarks>
         public void AddResource(Resource resource)
         {
-            using (var repo = new ResourceRepository(new PMSModel()))
-            {
-                repo.AddnewResource(resource);
-            }
+            resourceRepository.AddnewResource(resource);
         }
 
         /// <remarks>Marta Kovač</remarks>
         public bool RemoveResource(Resource resource)
         {
-            using (var repo = new ResourceRepository(new PMSModel()))
-            {
-                bool isDeleted = repo.RemoveResoruce(resource);
-                return isDeleted;
-            }
+            bool isDeleted = resourceRepository.RemoveResoruce(resource);
+            return isDeleted;
         }
 
         /// <remarks>Marta Kovač</remarks>
         public void UpdateResource(Resource resource)
         {
-            using (var repo = new ResourceRepository(new PMSModel()))
-            {
-                repo.UpdateResource(resource);
-            }
+            resourceRepository.UpdateResource(resource);
         }
     }
 }
