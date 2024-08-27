@@ -1,4 +1,5 @@
-﻿using EntityLayer;
+﻿using DataAccessLayer.Interfaces;
+using EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,7 +12,7 @@ using System.Xml.Linq;
 
 namespace DataAccessLayer
 {
-    public class GroupRepository : IDisposable
+    public class GroupRepository : IDisposable, IGroupRepository
     {
         private PMSModel Context;
         private DbSet<Group> Group;

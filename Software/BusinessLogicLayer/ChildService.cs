@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using DataAccessLayer.Interfaces;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,14 @@ namespace BusinessLogicLayer
 
         private GroupRepository groupRepository;
         private ChildRepository childRepository;
+        private readonly IChildRepository _childRepository;
 
-
-        public ChildService()
+        public ChildService(IChildRepository _childRepository = null)
         {
             groupRepository = new GroupRepository(new PMSModel());
             childRepository = new ChildRepository(new PMSModel());
+
+            this._childRepository = _childRepository ?? new ChildRepository(new PMSModel());
         }
 
         //Vdran Đimoti
@@ -41,10 +44,8 @@ namespace BusinessLogicLayer
 
         ///<remarks>Karla Kulier</remarks
         public List<Child> GetAllChildren() {
-        using (var repo = new ChildRepository(new PMSModel())) {
-            var child = repo.GetAllChild().ToList();
+            var child = _childRepository.GetAllChild().ToList();
             return child;
-            }
         }
         ///<remarks>Karla Kulier</remarks
         public void AddChild(Child child) {

@@ -115,7 +115,10 @@
     <Compile Include="ActivityRepository.cs" />
     <Compile Include="DayRepository.cs" />
     <Compile Include="EquipmentRepository.cs" />
+    <Compile Include="Interfaces\IAttendanceRepository.cs" />
+    <Compile Include="Interfaces\IChildRepository.cs" />
     <Compile Include="Interfaces\IEquipmentRepository.cs" />
+    <Compile Include="Interfaces\IGroupRepository.cs" />
     <Compile Include="Interfaces\IResourceRepository.cs" />
     <Compile Include="ParentRepository.cs" />
     <Compile Include="AttendanceRepository.cs" />

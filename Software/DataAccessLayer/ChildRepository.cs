@@ -1,4 +1,5 @@
-﻿using EntityLayer;
+﻿using DataAccessLayer.Interfaces;
+using EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class ChildRepository : IDisposable
+    public class ChildRepository : IDisposable, IChildRepository
     {
         private PMSModel Context;
         private DbSet<Child> Children;
