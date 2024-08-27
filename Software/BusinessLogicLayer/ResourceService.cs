@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer;
 using DataAccessLayer.Interfaces;
 using EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,7 +10,7 @@ namespace BusinessLogicLayer
     public class ResourceService
     {
         private readonly IResourceRepository resourceRepository;
-        public ResourceService(IEquipmentRepository equipmentRepository = null)
+        public ResourceService(IResourceRepository resourceRepository = null)
         {
             this.resourceRepository = resourceRepository ?? new ResourceRepository(new PMSModel());
         }
@@ -23,6 +24,7 @@ namespace BusinessLogicLayer
         /// <remarks>Marta Kovač</remarks>
         public void AddResource(Resource resource)
         {
+            ValidateResource(resource);
             resourceRepository.AddnewResource(resource);
         }
 
@@ -36,7 +38,21 @@ namespace BusinessLogicLayer
         /// <remarks>Marta Kovač</remarks>
         public void UpdateResource(Resource resource)
         {
+            ValidateResource(resource);
             resourceRepository.UpdateResource(resource);
+        }
+
+        private void ValidateResource(Resource resource)
+        {
+            if (string.IsNullOrWhiteSpace(resource.Name))
+            {
+                throw new ArgumentException("Name is required.");
+            }
+
+            if (resource.Amount == 0)
+            {
+                throw new ArgumentNullException(nameof(resource.Amount), "Amount cannot be null.");
+            }
         }
     }
 }

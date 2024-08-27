@@ -21,11 +21,6 @@ namespace PresentationLayer.UserControls
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (txtName.Text == "" || txtAmount.Text == "")
-            {
-                MessageBox.Show("Sva polja osim polja Description moraju imati unesenu vrijednost");
-                return;
-            }
             try
             {
                 var uc = new ucSuppliesAdministrating(MainWindow);
@@ -41,6 +36,14 @@ namespace PresentationLayer.UserControls
                 service.AddResource(resource);
 
                 MainWindow.controlPanel.Content = uc;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number for Amount.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (Exception ex)
             {
