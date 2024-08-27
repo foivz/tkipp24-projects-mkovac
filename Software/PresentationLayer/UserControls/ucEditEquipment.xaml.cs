@@ -33,9 +33,17 @@ namespace PresentationLayer.UserControls
 
                 MainWindow.controlPanel.Content = new ucSuppliesAdministrating(MainWindow);
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number for Amount.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                MessageBox.Show($"An error occurred: {ex.Message}\n\n{ex.StackTrace}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
