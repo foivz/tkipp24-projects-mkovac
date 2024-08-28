@@ -15,6 +15,7 @@ namespace BusinessLogicLayer
 
         private GroupRepository groupRepository;
         private ChildRepository childRepository;
+
         private readonly IChildRepository _childRepository;
 
         public ChildService(IChildRepository _childRepository = null)

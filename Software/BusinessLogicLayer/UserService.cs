@@ -10,11 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using ModelsLayer.Models;
 using ModelsLayer.Base;
+using DataAccessLayer.Interfaces;
 
 namespace BusinessLogicLayer
 {
     public class UserService
     {
+        private readonly IUserRepository userRepository;
+
+        public UserService(IUserRepository userRepository = null) { 
+            this.userRepository = userRepository ?? new UserRepository(new PMSModel());
+        }
+
         ///<remarks>Karla Kulier</remarks
         public List<User> getUsers()
         {
@@ -74,50 +81,46 @@ namespace BusinessLogicLayer
         /// <remarks>Marta Kovač</remarks>
         public async Task<GenericResponse> ForgotPassword(string email)
         {
-            using (var repo = new UserRepository(new PMSModel()))
+            var model = await userRepository.GetForgotPasswordModel(email);
+            var response = new GenericResponse();
+
+            Boolean endsWithGmail = email.EndsWith("@gmail.com");
+
+            if(!endsWithGmail)
             {
-                var model = await repo.GetForgotPasswordModel(email);
-                var response = new GenericResponse();
+                response.Success = false;
+                response.Message = $"The invalid email." +
+                    "Please provide a valid email address ending with '@gmail.com'.";
+                return response;
+            }
 
-                Boolean endsWithGmail = email.EndsWith("@gmail.com");
+            if (model is null)
+            {
+                response.Success = false;
+                response.Message = $"There is no account registered with the provided email address." +
+                    "Please verify the email address and try again.";
+                return response;
+            }
 
-                if(endsWithGmail == false)
-                {
-                    response.Success = false;
-                    response.Message = $"The invalid email." +
-                        "Please provide a valid email address ending with '@gmail.com'.";
-                    return response;
-                }
+            string subject = "[TheSnackAlchemist] Your required password is here!";
+            string body = $"Hi {model.FirstName}, <br/><br/>" +
+                $"here is your password: <b>{model.Password}</b><br/><br/>" +
+                $"If you did not send this request, please ignore this email!<br/><br/>" +
+                $"Best Regards,<br/>" +
+                $"The Snack Alchemist Team";
 
-                if (model is null)
-                {
-                    response.Success = false;
-                    response.Message = $"There is no account registered with the provided email address." +
-                        "Please verify the email address and try again.";
-                    return response;
-                }
-
-                string subject = "[TheSnackAlchemist] Your required password is here!";
-                string body = $"Hi {model.FirstName}, <br/><br/>" +
-                    $"here is your password: <b>{model.Password}</b><br/><br/>" +
-                    $"If you did not send this request, please ignore this email!<br/><br/>" +
-                    $"Best Regards,<br/>" +
-                    $"The Snack Alchemist Team";
-
-                try
-                {
-                    new EmailService(subject, body, model.MailTo);
-                    response.Success = true;
-                    response.Message = $"Your password has been sent successfully to inserted email: {model.MailTo}.";
-                    return response;
-                }
-                catch
-                {
-                    response.Success = false;
-                    response.Message = "Error occured. Failed to send an email.";
-                    return response;
-                }
-
+            try
+            {
+                new EmailService(subject, body, model.MailTo);
+                response.Success = true;
+                response.Message = $"Your password has been sent successfully to inserted email: {model.MailTo}.";
+                return response;
+            }
+            catch
+            {
+                response.Success = false;
+                response.Message = "Error occured. Failed to send an email.";
+                return response;
             }
         }
     }

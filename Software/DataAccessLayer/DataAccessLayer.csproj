@@ -120,6 +120,7 @@
     <Compile Include="Interfaces\IEquipmentRepository.cs" />
     <Compile Include="Interfaces\IGroupRepository.cs" />
     <Compile Include="Interfaces\IResourceRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="ParentRepository.cs" />
     <Compile Include="AttendanceRepository.cs" />
     <Compile Include="ChildRepository.cs" />
