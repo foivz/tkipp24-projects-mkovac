@@ -13,6 +13,11 @@ namespace DataAccessLayer
         {
         }
 
+        public PMSModel(string connectionString)
+        : base(connectionString)
+        {
+        }
+
         public virtual DbSet<Attendance> Attendances { get; set; }
         public virtual DbSet<Child> Children { get; set; }
         public virtual DbSet<DailyActivity> DailyActivities { get; set; }
