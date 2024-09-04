@@ -130,5 +130,23 @@ namespace PresentationLayer
                 e.Handled = true;
             }
         }
+
+        private void btnChildrenAttendance_Click(object sender, RoutedEventArgs e)
+        {
+            ucStatistics ucStatistics = new ucStatistics(this);
+            controlPanel.Content = ucStatistics;
+        }
+
+        private void btnChildrenGender_Click(object sender, RoutedEventArgs e)
+        {
+            ucStatisticsGender ucStatisticsGender = new ucStatisticsGender(this);
+            controlPanel.Content = ucStatisticsGender;
+        }
+
+        private void btnChildrenGroups_Click(object sender, RoutedEventArgs e)
+        {
+            ucStatisticsGroups ucStatisticsGroups = new ucStatisticsGroups(this);
+            controlPanel.Content = ucStatisticsGroups;
+        }
     }
 }

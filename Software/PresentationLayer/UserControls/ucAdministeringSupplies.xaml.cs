@@ -1,8 +1,10 @@
 ﻿using BusinessLogicLayer;
 using EntityLayer;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace PresentationLayer.UserControls
 {
@@ -93,6 +95,22 @@ namespace PresentationLayer.UserControls
             dgvEquipment.Columns[2].MaxWidth = 100;
         }
 
+        private void txtSearchEquipment_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string filterText = txtSearchEquipment.Text.ToLower();
+            ICollectionView cv = CollectionViewSource.GetDefaultView(dgvEquipment.ItemsSource);
+
+            cv.Filter = item =>
+            {
+                if (item is Equipment equipment)
+                {
+                    return equipment.Name.ToLower().Contains(filterText) ||
+                   equipment.Description.ToLower().Contains(filterText);
+                }
+                return false;
+            };
+        }
+
         // -----------------------------------------------------------------------------------------
 
         private void tiResources_Loaded(object sender, RoutedEventArgs e)
@@ -170,6 +188,22 @@ namespace PresentationLayer.UserControls
             dgvResources.Columns[2].MaxWidth = 100;
 
             dgvResources.Columns[4].Visibility = Visibility.Collapsed;
+        }
+
+        private void txtSearchResources_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string filterText = txtSearchResources.Text.ToLower();
+            ICollectionView cv = CollectionViewSource.GetDefaultView(dgvResources.ItemsSource);
+
+            cv.Filter = item =>
+            {
+                if (item is Resource resource)
+                {
+                    return resource.Name.ToLower().Contains(filterText) ||
+                           resource.Description.ToLower().Contains(filterText);
+                }
+                return false;
+            };
         }
     }
 }

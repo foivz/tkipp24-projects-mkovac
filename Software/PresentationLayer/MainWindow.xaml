@@ -39,12 +39,15 @@
                 </TreeViewItem>
             </TreeView>
             <TreeView x:Name="treeViewNavigationStatisticss">
-                <TreeViewItem Header="Statistics">
+                <TreeViewItem x:Name="btnStatistics" Header="Statistics">
                     <TreeViewItem Header="Children Attendance" MouseLeftButtonUp="TreeViewItem_MouseLeftButtonUp_9"/>
                     <TreeViewItem Header="Children Gender" MouseLeftButtonUp="TreeViewItem_MouseLeftButtonUp_10"/>
                     <TreeViewItem Header="Children Groups" MouseLeftButtonUp="TreeViewItem_MouseLeftButtonUp_11"/>
                 </TreeViewItem>
             </TreeView>
+            <Button x:Name="btnChildrenAttendance" Content="Children Attendance" Click="btnChildrenAttendance_Click"></Button>
+            <Button x:Name="btnChildrenGender" Content="Children Gender" Click="btnChildrenGender_Click"></Button>
+            <Button x:Name="btnChildrenGroups" Content="Children Groups" Click="btnChildrenGroups_Click"></Button>
             <Button  x:Name="btnLogout" Content="Logout" Click="btnLogout_Click"/>
         </StackPanel>
 

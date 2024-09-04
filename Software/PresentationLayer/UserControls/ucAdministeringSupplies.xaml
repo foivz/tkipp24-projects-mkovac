@@ -19,10 +19,16 @@
             <TabItem x:Name="tiEquipment" Header="Equipment" FontSize="15" Loaded="tiEquipment_Loaded" PreviewMouseLeftButtonDown="tiEquipment_PreviewMouseLeftButtonDown">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
+                    <TextBox x:Name="txtSearchEquipment" Grid.Row="0" Margin="10"
+                             VerticalAlignment="Center" 
+                             TextChanged="txtSearchEquipment_TextChanged"
+                             />
                     <DataGrid x:Name="dgvEquipment"
+                              Grid.Row="1"
                               Margin="10"
                               HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"
@@ -30,7 +36,7 @@
                               CanUserResizeRows="True"
                               AutoGenerateColumns="True"
                               ColumnWidth="*"/>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
                         <Button x:Name="btnEditEquipment" Content="Edit" Width="100" Height="40" FontWeight="Bold" Margin="10,0" Click="btnEditEquipment_Click"
                                 Background="#4CAF50" Foreground="White"/>
                         <Button x:Name="btnRemoveEquipment" Content="Remove" Width="100" Height="40" FontWeight="Bold" Margin="10,0" Click="btnRemoveEquipment_Click"
@@ -44,10 +50,15 @@
             <TabItem x:Name="tiResources" Header="Resources" FontSize="15" Loaded="tiResources_Loaded" PreviewMouseLeftButtonDown="tiResources_PreviewMouseLeftButtonDown">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
+                    <TextBox x:Name="txtSearchResources" Grid.Row="0" Margin="10"
+                             VerticalAlignment="Center" 
+                             TextChanged="txtSearchResources_TextChanged"/>
                     <DataGrid x:Name="dgvResources"
+                              Grid.Row="1"
                               Margin="10"
                               HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"
@@ -55,7 +66,7 @@
                               CanUserResizeRows="True"
                               AutoGenerateColumns="True"
                               ColumnWidth="*"/>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
                         <Button x:Name="btnEditResource" Content="Edit" Width="100" Height="40" FontWeight="Bold" Margin="10,0" Click="btnEditResource_Click"
                                 Background="#4CAF50" Foreground="White"/>
                         <Button x:Name="btnRemoveResource" Content="Remove" Width="100" Height="40" FontWeight="Bold" Margin="10,0" Click="btnRemoveResource_Click"

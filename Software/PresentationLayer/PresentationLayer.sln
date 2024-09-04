@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcceptanceTests", "..\Accep
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{2DB65A01-490A-4081-A6DB-7D4E2E86423E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS_UnitTests", "..\PMS_UnitTests\PMS_UnitTests.csproj", "{E06F64ED-D6CC-4BDF-AF20-DBE951B290A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMS_UnitTests", "..\PMS_UnitTests\PMS_UnitTests.csproj", "{E06F64ED-D6CC-4BDF-AF20-DBE951B290A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS.IntegrationTests", "..\PMS.IntegrationTests\PMS.IntegrationTests.csproj", "{F1C26628-065C-491B-86E3-A7E34AD390D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{E06F64ED-D6CC-4BDF-AF20-DBE951B290A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E06F64ED-D6CC-4BDF-AF20-DBE951B290A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E06F64ED-D6CC-4BDF-AF20-DBE951B290A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1C26628-065C-491B-86E3-A7E34AD390D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C26628-065C-491B-86E3-A7E34AD390D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C26628-065C-491B-86E3-A7E34AD390D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C26628-065C-491B-86E3-A7E34AD390D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
