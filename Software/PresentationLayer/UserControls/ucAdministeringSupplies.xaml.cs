@@ -205,5 +205,15 @@ namespace PresentationLayer.UserControls
                 return false;
             };
         }
+
+        private void btnClearEquipmentSearch_Click(object sender, RoutedEventArgs e)
+        {
+            txtSearchEquipment.Text = string.Empty;
+        }
+
+        private void btnClearResourcesSearch_Click(object sender, RoutedEventArgs e)
+        {
+            txtSearchResources.Text = string.Empty;
+        }
     }
 }
