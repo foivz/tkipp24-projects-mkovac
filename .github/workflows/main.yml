@@ -1,0 +1,65 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3.5.2
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.2.0
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.3.1
+
+    - name: Navigate to Workspace
+      run: cd $GITHUB_WORKSPACE/Software
+
+    - name: Restore NuGet Package
+      run: nuget restore
+
+    - name: Build a solution
+      run: msbuild PresentationLayer.sln /p:platform="Any CPU" /p:configuration="Release"
+
+    - name: Run Unit tests
+      run: dotnet test --configuration Release --filter Importers.UnitTests
+        
+    - name: Run Integration tests
+      run: dotnet test --configuration Release --filter Importers.IntegrationTests
+
+    - name: Navigate to startup project
+      run: cd PresentationLayer
+
+    - name: Create a setup
+      run: msbuild /t:Publish /p:Configuration=Release /p:PublishDir=publish/
+
+    - name: Create zip archive
+      uses: TheDoctor0/zip-release@0.7.1
+      with:
+        type: 'zip'
+        filename: 'setup.zip'
+        path: Software/publish/
+
+    - name: Create a release
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+        repo_token: ${{secrets.GITHUB_TOKEN}}
+        prerelease: false
+        files: setup.zip
+
+    - name: Publish applications
+      run: msbuild /t:publish /p:configuration=Release /p:PublishDir=publish/
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: TKPPProjectSetup
+        path: PresentationLayer/publish/
