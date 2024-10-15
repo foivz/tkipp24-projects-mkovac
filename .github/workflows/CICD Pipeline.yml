@@ -24,10 +24,10 @@ jobs:
         run: Get-ChildItem -Path $GITHUB_WORKSPACE
 
       - name: Check Software directory exists
-        run: Test-Path $GITHUB_WORKSPACE\\Software
+        run: Test-Path $GITHUB_WORKSPACE
   
       - name: Navigate to Workspace
-        run: Set-Location -Path $GITHUB_WORKSPACE\\Software
+        run: cd $GITHUB_WORKSPACE
   
       - name: Restore NuGet Package
         run: nuget restore
