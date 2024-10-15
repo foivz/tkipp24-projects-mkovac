@@ -21,7 +21,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.3.1
   
       - name: Navigate to Workspace
-        run: cd $GITHUB_WORKSPACE/Software
+        run: cd $GITHUB_WORKSPACE/Fork/tkipp24-projects-mkovac/Software
   
       - name: Restore NuGet Package
         run: nuget restore
