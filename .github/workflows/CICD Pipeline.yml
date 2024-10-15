@@ -24,7 +24,7 @@ jobs:
         run: Get-ChildItem -Path $GITHUB_WORKSPACE
   
       - name: Navigate to Workspace
-        run: cd $GITHUB_WORKSPACE\Software
+        run: Set-Location -Path $GITHUB_WORKSPACE/Software
   
       - name: Restore NuGet Package
         run: nuget restore
