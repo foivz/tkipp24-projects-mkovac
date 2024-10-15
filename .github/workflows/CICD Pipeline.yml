@@ -22,6 +22,9 @@ jobs:
 
       - name: List workspace contents
         run: Get-ChildItem -Path $GITHUB_WORKSPACE
+
+      - name: Check Software directory exists
+        run: Test-Path $GITHUB_WORKSPACE/Software
   
       - name: Navigate to Workspace
         run: Set-Location -Path $GITHUB_WORKSPACE/Software
